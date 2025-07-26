@@ -410,14 +410,22 @@ a {
   background: var(--primary-color);
 }
 
+/* =================feedback================== */
 .feedback {
   margin-top: 135px;
-  padding: 96px 0px;
-  background-color: #2e2100;
+  padding: 96px 0;
+  background: #2e2100;
 }
 
-.feedback .feedback-item {
+.feedback-list {
   display: flex;
+  overflow: hidden;
+}
+
+.feedback-item {
+  width: 100%;
+  display: flex;
+  flex-shrink: 0;
 }
 
 .feedback-item .avatar {
@@ -444,17 +452,22 @@ a {
 }
 
 .feedback-item .dots {
-  margin-top: 28px;
-  display: flex;
   gap: 6px;
+  display: flex;
+  margin-top: 28px;
 }
 
 .feedback-item .dot {
-  width: 6px;
   height: 6px;
+  width: 6px;
   border-radius: 50%;
   background: #634700;
   cursor: pointer;
+}
+
+.feedback-item .dot.active {
+  background: var(--primary-color);
+  cursor: default;
 }
 
 .feedback-item .content {
@@ -467,9 +480,4 @@ a {
   font-size: 2.6rem;
   font-style: italic;
   line-height: 1.54;
-}
-
-.feedback-item .dot.active {
-  background: var(--primary-color);
-  cursor: default;
 }
